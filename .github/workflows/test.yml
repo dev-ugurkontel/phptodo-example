@@ -7,7 +7,7 @@ on:
     workflow_dispatch:
     
 jobs:
-    artifacts_deneme_job:
+    artifacts-deneme-job:
       runs-on: ubuntu-latest
       steps:
         - name: Hello
@@ -19,8 +19,14 @@ jobs:
         - name: Dosyayi Check Etme
           run: cat hello.txt
       
-        - name: Artifacts
+        - name: Artifacts Upload
           uses: actions/upload-artifact@v4
           with:
             name: code-coverage-report
             path: hello.txt
+
+    artifacts-deneme2-job:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Hello 2
+          run: echo "Hello World 2!"
