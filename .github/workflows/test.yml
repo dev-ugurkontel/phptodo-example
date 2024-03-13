@@ -29,5 +29,11 @@ jobs:
       needs: artifacts-deneme-job
       runs-on: ubuntu-latest
       steps:
-        - name: Hello 2
-          run: echo "Hello World 2!"
+        - name: Artifacts Download
+          uses: actions/download-artifact@v4
+          with:
+            name: code-coverage-report
+            path: .
+
+        - name: Dosyayi Check Etme
+          run: ls -al
