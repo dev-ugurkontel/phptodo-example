@@ -10,11 +10,5 @@ jobs:
     bek_ilk_job:
         runs-on: ubuntu-latest
         steps:
-            - name: Hello World
+            - name: ${{ github.repositoryUrl }} - ${{ github.sha }}
               run: echo "Hello World"
-            - name: Deneme
-              run: ls -al
-            - name: Pwd
-              run: pwd
-            - name: Deneme2
-              uses: actions/checkout@v4

@@ -8,11 +8,10 @@ on:
 
 jobs:
     docker-img-build-job:
-        env:
-            PADISAH2: Orhan
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
+              name: Step 2
 
             - name: Set up QEMU
               uses: docker/setup-qemu-action@v3
@@ -46,3 +45,13 @@ jobs:
                 push: true
                 tags: ugurkontel/phptodo:database
                 file: ./Dockerfile.database
+
+            # - run: docker image build -t ugurkontel/phptodo-example:frontend -f ./Dockerfile.frontend
+            # - run: docker image build -t ugurkontel/phptodo-example:backend -f ./Dockerfile.backend
+            # - run: docker image build -t ugurkontel/phptodo-example:database -f ./Dockerfile.database
+
+            # - run: docker login -u ugurkontel -p P@ssw0rd!
+
+            # - run: docker push ugurkontel/phptodo-example:frontend
+            # - run: docker push ugurkontel/phptodo-example:backend
+            # - run: docker push ugurkontel/phptodo-example:database
